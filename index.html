@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERSECURITY NOOB ROASTED</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #ff5555;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 0, 0.03) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 3px solid #ff0000;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title {
+            font-size: 4.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            color: #ff0000;
+            text-shadow: 
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+            animation: flicker 3s infinite;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: #00ff00;
+            margin-top: 1rem;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        
+        .terminal {
+            background: rgba(0, 20, 0, 0.9);
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .terminal::before {
+            content: 'root@roast:~#';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #000;
+            color: #00ff00;
+            padding: 0 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .output-line {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #ff0000;
+            animation: typewriter 0.1s steps(40, end);
+            animation-fill-mode: both;
+        }
+        
+        .cmd {
+            color: #00ff00;
+            font-weight: bold;
+        }
+        
+        .path {
+            color: #00ffff;
+        }
+        
+        .comment {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .highlight {
+            color: #ffff00;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ffff00;
+        }
+        
+        .error {
+            color: #ff5555;
+            animation: blink 1s infinite;
+        }
+        
+        .section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        
+        .section-title {
+            color: #ffff00;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            border-bottom: 1px solid #ffff00;
+            padding-bottom: 0.5rem;
+        }
+        
+        .list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        
+        .list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .list li::before {
+            content: '$';
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+            font-weight: bold;
+        }
+        
+        .ascii-art {
+            color: #00ff00;
+            font-family: monospace;
+            font-size: 0.8rem;
+            line-height: 1;
+            text-align: center;
+            margin: 2rem 0;
+            opacity: 0.7;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ff0000;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+            25%, 75% { opacity: 0.9; }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to bottom, transparent, #00ff00, transparent);
+            animation: scanline 8s linear infinite;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.3;
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            animation: glitch-1 2s infinite linear alternate-reverse;
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 #00ffff;
+            animation: glitch-2 3s infinite linear alternate-reverse;
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+        }
+        
+        @keyframes glitch-1 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(var(--glitch-offset, 5) * 1px)); }
+        }
+        
+        @keyframes glitch-2 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(var(--glitch-offset, 5) * -1px)); }
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: #00ff00;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="title glitch" data-text="CYBERSECURITY NOOB ROASTED">
+                CYBERSECURITY NOOB ROASTED
+            </h1>
+            <div class="subtitle">
+                A COMPREHENSIVE ANALYSIS OF YOUR FAKE HACKER PERSONA
+            </div>
+        </header>
+        
+        <div class="terminal">
+            <div class="output-line" style="animation-delay: 0.1s">
+                <span class="cmd">root@roast</span>:<span class="path">~</span># whoami
+            </div>
+            <div class="output-line" style="animation-delay: 0.5s">
+                script_kiddie
+            </div>
+            
+            <div class="output-line" style="animation-delay: 1s">
+                <span class="cmd">root@roast</span>:<span class="path">~</span># cat /proc/cyber_noob/status
+            </div>
+            <div class="output-line" style="animation-delay: 1.5s">
+                Name: Aspiring "Ethical Hacker"
+            </div>
+            <div class="output-line" style="animation-delay: 2s">
+                PID: 1337 (but actually 1000)
+            </div>
+            <div class="output-line" style="animation-delay: 2.5s">
+                State: S (Sleeping on the job)
+            </div>
+            <div class="output-line" style="animation-delay: 3s">
+                Credibility: 0.0001%
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">DECONSTRUCTION OF YOUR "SKILLS"</h2>
+            
+            <div class="terminal">
+                <div class="output-line" style="animation-delay: 3.5s">
+                    <span class="highlight">"Vulnerability Assessment"</span> = Running Nessus Home against your mom's Wi-Fi
+                </div>
+                <div class="output-line" style="animation-delay: 4s">
+                    <span class="highlight">"Penetration Testing"</span> = Following HTB walkthroughs on YouTube
+                </div>
+                <div class="output-line" style="animation-delay: 4.5s">
+                    <span class="highlight">"Exploit Research"</span> = Copy-pasting from ExploitDB
+                </div>
+                <div class="output-line" style="animation-delay: 5s">
+                    <span class="highlight">"Dedicated to securing digital environments"</span> = Changed your Facebook password once
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">YOUR "PROFESSIONAL" TOOLKIT</h2>
+            
+            <ul class="list">
+                <li>Burp Suite Community Edition <span class="comment"># Waiting 30 seconds between requests like a chump</span></li>
+                <li>Wireshark <span class="comment"># Opened once, immediately closed due to confusion</span></li>
+                <li>John the Ripper <span class="comment"># Cracking your own P@ssw0rd123 for dopamine</span></li>
+                <li>Python scripts from GitHub <span class="error"># One sudo rm -rf away from disaster</span></li>
+                <li>Kali Linux <span class="comment"># Live booted, never installed</span></li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">SPOT THE NOOB CHECKLIST</h2>
+            
+            <div class="terminal">
+                <div class="output-line">
+                    [<span class="error">✗</span>] Has "1337" or "hax0r" in any username
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] Owns hacker hoodie from Amazon
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] Thinks sudo stands for "Super User Do"
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] Can quote Mr. Robot but can't write Bash
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] Calls WannaCry "sophisticated"
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] 47 Udemy courses bookmarked, 0 completed
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] Thinks CTF flags = real experience
+                </div>
+                <div class="output-line">
+                    [<span class="error">✗</span>] Used aircrack-ng once = "wireless security expert"
+                </div>
+            </div>
+        </div>
+        
+        <div class="ascii-art">
+            ┌─────────────────────────────────────┐<br>
+            │   N O O B   D E T E C T E D         │<br>
+            │                                     │<br>
+            │   UID: 1000(pretender)              │<br>
+            │   GID: 1000(noobs)                  │<br>
+            │   GROUPS: sudo, adm, script_kiddies │<br>
+            │                                     │<br>
+            │   THREAT LEVEL: <span class="error">CRINGE</span>           │<br>
+            └─────────────────────────────────────┘
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">PREDICTED CAREER PATH</h2>
+            
+            <div class="terminal">
+                <div class="output-line">
+                    1. <span class="highlight">Actually learn something</span> <span class="comment"># Probability: 0.01%</span>
+                </div>
+                <div class="output-line">
+                    2. <span class="highlight">Compliance checkbox checker</span> <span class="comment"># Telling people to use longer passwords</span>
+                </div>
+                <div class="output-line">
+                    3. <span class="highlight">Get expelled from university</span> <span class="comment"># "Testing" their network without permission</span>
+                </div>
+                <div class="output-line">
+                    4. <span class="highlight">Twitter infosec influencer</span> <span class="comment"># Retweeting actual researchers, adding 🔒🚨👀</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terminal" style="margin-top: 3rem;">
+            <div class="output-line">
+                <span class="cmd">root@roast</span>:<span class="path">~</span># ./final_verdict.sh
+            </div>
+            <div class="output-line">
+                <span class="error">[!]</span> FINAL DIAGNOSIS: SCRIPT KIDDIE WITH DELUSIONS OF GRANDEUR
+            </div>
+            <div class="output-line">
+                <span class="error">[!]</span> The only environment you're securing is your Minecraft server
+            </div>
+            <div class="output-line">
+                <span class="error">[!]</span> The only exploit you're researching is how to exploit your parents' patience
+            </div>
+            <div class="output-line">
+                <span class="error">[!]</span> Come back when you can exit vim without Googling it
+            </div>
+            <div class="output-line">
+                <span class="cmd">root@roast</span>:<span class="path">~</span>#<span class="cursor"></span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>ROAST COMPLETE. SYSTEM PWNED.</p>
+            <p>Your HTB rank is "Script Kiddie" and we all know it.</p>
+            <p>Your TryHackMe streak is the most consistent thing about you.</p>
+            <p class="blink">[ PRESS ANY KEY TO CONTINUE BEING A NOOB... ]</p>
+        </div>
+    </div>
+
+    <script>
+        // Add typing effect to terminal lines
+        document.addEventListener('DOMContentLoaded', function() {
+            const lines = document.querySelectorAll('.output-line');
+            lines.forEach((line, index) => {
+                line.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // Random glitch effect
+            function randomGlitch() {
+                const glitch = document.querySelector('.glitch');
+                if(glitch) {
+                    const offset = Math.floor(Math.random() * 10) - 5;
+                    glitch.style.setProperty('--glitch-offset', offset);
+                }
+                
+                // Random terminal flicker
+                if(Math.random() > 0.8) {
+                    document.querySelectorAll('.terminal').forEach(term => {
+                        term.style.opacity = '0.7';
+                        setTimeout(() => {
+                            term.style.opacity = '1';
+                        }, 50);
+                    });
+                }
+            }
+            
+            setInterval(randomGlitch, 2000);
+            
+            // Fake typing in cursor area
+            const cursor = document.querySelector('.cursor');
+            const commands = [
+                ' sudo apt-get install real-skills',
+                ' ./stop_being_a_noob.sh',
+                ' rm -rf ~/delusions-of-grandeur/',
+                ' git clone https://github.com/actual/learning.git',
+                ' exit'
+            ];
+            
+            let cmdIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            function typeCommand() {
+                const currentCmd = commands[cmdIndex];
+                
+                if(!isDeleting && charIndex <= currentCmd.length) {
+                    cursor.insertAdjacentHTML('beforebegin', currentCmd.charAt(charIndex - 1) || '');
+                    charIndex++;
+                    setTimeout(typeCommand, 50);
+                } else if(isDeleting && charIndex >= 0) {
+                    const text = cursor.previousSibling;
+                    if(text && text.nodeType === 3) {
+                        text.textContent = text.textContent.slice(0, -1);
+                    }
+                    charIndex--;
+                    setTimeout(typeCommand, 30);
+                } else {
+                    isDeleting = !isDeleting;
+                    if(!isDeleting) {
+                        cmdIndex = (cmdIndex + 1) % commands.length;
+                    }
+                    setTimeout(typeCommand, 1000);
+                }
+            }
+            
+            if(cursor) {
+                setTimeout(typeCommand, 2000);
+            }
+            
+            // Matrix-style background effect
+            function createMatrixEffect() {
+                const chars = "01";
+                const container = document.querySelector('.container');
+                
+                for(let i = 0; i < 50; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    span.style.position = 'fixed';
+                    span.style.left = Math.random() * 100 + 'vw';
+                    span.style.top = '-20px';
+                    span.style.color = Math.random() > 0.5 ? '#00ff00' : '#ff0000';
+                    span.style.opacity = '0.1';
+                    span.style.fontSize = Math.random() * 10 + 10 + 'px';
+                    span.style.pointerEvents = 'none';
+                    span.style.zIndex = '-1';
+                    
+                    const speed = Math.random() * 5 + 2;
+                    const delay = Math.random() * 5;
+                    
+                    span.style.animation = `fall ${speed}s linear ${delay}s infinite`;
+                    
+                    document.body.appendChild(span);
+                }
+            }
+            
+            // Add falling animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            createMatrixEffect();
+            
+            // Play terminal sounds on click
+            document.addEventListener('click', function(e) {
+                if(e.target.closest('.terminal')) {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = 800 + Math.random() * 400;
+                    oscillator.type = 'sawtooth';
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                    
+                    oscillator.start();
+                    oscillator.stop(audioContext.currentTime + 0.1);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
